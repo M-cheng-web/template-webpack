@@ -1,0 +1,63 @@
+{
+  "name": "template-webpack",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:M-cheng-web/template-webpack.git",
+  "author": "cxh <2604856589@qq.com>",
+  "license": "MIT",
+  "scripts": {
+    "dev": "npx webpack-dev-server --config webpack.config.js",
+    "dev-pro": "npx webpack-dev-server --config webpack.config.prod.js",
+    "build": "yarn clean && webpack --config webpack.config.js",
+    "build-dll": "yarn clean-dll && webpack --config webpack.dll.js",
+    "build-pro": "yarn clean && webpack --config webpack.config.prod.js",
+    "clean": "rimraf build",
+    "clean-dll": "rimraf dll"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.17.4",
+    "@babel/preset-env": "^7.16.11",
+    "babel-loader": "^8.2.3",
+    "core-js": "^3.21.0",
+    "css-loader": "^6.6.0",
+    "eslint": "^8.9.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.25.4",
+    "eslint-webpack-plugin": "^3.1.1",
+    "file-loader": "^6.2.0",
+    "html-loader": "^3.1.0",
+    "html-webpack-plugin": "^5.5.0",
+    "less": "^4.1.2",
+    "less-loader": "^10.2.0",
+    "mini-css-extract-plugin": "^2.5.3",
+    "optimize-css-assets-webpack-plugin": "^6.0.1",
+    "postcss-loader": "^6.2.1",
+    "postcss-preset-env": "^7.4.0",
+    "rimraf": "^3.0.2",
+    "thread-loader": "^3.0.4",
+    "url-loader": "^4.1.1",
+    "webpack": "^5.69.0",
+    "webpack-cli": "^4.9.2",
+    "webpack-dev-server": "^4.7.4"
+  },
+  "browserslist": {
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ],
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ]
+  },
+  "dependencies": {
+    "jquery": "^3.6.0",
+    "vue": "^3.2.31"
+  },
+  "sideEffects": [
+    "*.css",
+    "*.less"
+  ]
+}
