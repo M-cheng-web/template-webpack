@@ -21,7 +21,7 @@ const commonCssLoader = [
 ];
 
 module.exports = {
-  mode: 'development', // production/development 生产环境会自动压缩js代码 自动压缩html代码
+  mode: process.env.NODE_ENV, // production/development 生产环境会自动压缩js代码 自动压缩html代码
   entry: './src/js/index.js',
   output: {
     filename: 'js/[name].[contenthash:10].js',

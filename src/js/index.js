@@ -22,3 +22,5 @@ const b = new Promise((res) => {
 });
 
 console.log('b', b);
+
+console.log('process.env.NODE_ENV', process.env.NODE_ENV);
