@@ -3,8 +3,6 @@ const OptimizeCssAssetsWebpackPlugin = require('optimize-css-assets-webpack-plug
 const { merge } = require('webpack-merge');
 const base = require('./webpack.config.base');
 
-console.log('process.env.NODE_ENV', process.env.NODE_ENV);
-
 process.env.NODE_ENV = 'production'; // 通过这个控制 css 适配 生产/测试
 
 // css & less 复用loader
@@ -22,8 +20,6 @@ const commonCssLoader = [
 ];
 
 module.exports = merge(base, {
-  mode: process.env.NODE_ENV, // production/development 生产环境会自动压缩js代码 自动压缩html代码
-  devtool: process.env.NODE_ENV === 'development' ? 'eval-source-map' : false,
   module: {
     rules: [
       {

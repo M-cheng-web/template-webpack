@@ -7,9 +7,10 @@
   "license": "MIT",
   "scripts": {
     "dev": "npx webpack-dev-server --config config/webpack.config.dev.js --mode development",
-    "build": "yarn clean && webpack --config config/webpack.config.dev.js",
-    "build-pro": "yarn clean && webpack --config config/webpack.config.prod.js",
-    "clean": "rimraf build"
+    "build": "yarn clean && cross-env BUILD_ENV=development webpack --config config/webpack.config.dev.js --mode development --progress",
+    "build:prod": "yarn clean && cross-env BUILD_ENV=production webpack --config config/webpack.config.prod.js --mode production --progress",
+    "clean": "rimraf build",
+    "mddir": "mddir"
   },
   "devDependencies": {
     "@babel/core": "^7.17.4",
@@ -27,6 +28,7 @@
     "html-webpack-plugin": "^5.5.0",
     "less": "^4.1.2",
     "less-loader": "^10.2.0",
+    "mddir": "^1.1.1",
     "mini-css-extract-plugin": "^2.5.3",
     "optimize-css-assets-webpack-plugin": "^6.0.1",
     "postcss-loader": "^6.2.1",
@@ -54,6 +56,7 @@
   },
   "dependencies": {
     "jquery": "^3.6.0",
+    "properties": "^1.2.1",
     "vue": "^3.2.31"
   },
   "sideEffects": [
